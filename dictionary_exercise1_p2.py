@@ -6,8 +6,6 @@ infile = open("WorldSeriesWinners.txt","r")
 # Prints each team name individually.
 teams = infile.readline()
 team_name = teams.rstrip('\n')
-print(teams)
-print(team_name)
 
 # Set variable for starting year of the World Series.
 starting_year = 1903
@@ -24,9 +22,11 @@ ws_year_dict[starting_year] = team_name
 # Counter variable to keep track of each WS win per team.
 num_ws_won_dict[team_name] = 1
 
+# 
 while teams != "":
 
-    if starting_year != 1904 and starting_year != 1994:
+    if starting_year != 1903 and starting_year != 1993:
+
         if team_name in num_ws_won_dict:
             num_ws_won_dict[team_name] += 1
         else:
@@ -38,9 +38,10 @@ while teams != "":
         starting_year += 1
 
         ws_year_dict[starting_year] = team_name
-
+        
     else:
         starting_year += 1
+        
 
 infile.close()
 
